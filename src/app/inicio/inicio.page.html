@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar color="primary">
+    <div class="ion-text-center">
+      <ion-title >Astronomy Picture of the Day</ion-title>
+    </div>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="body">
+
+
+
+  <ion-list>
+    <ion-item *ngFor="let c of componentes"
+    [routerLink]="c.redirectTo" detail>
+    <ion-icon slot="start" [name]="c.icon"></ion-icon>
+      <ion-label>
+  {{ c.name }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

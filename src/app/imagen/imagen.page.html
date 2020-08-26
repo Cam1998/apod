@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      Astronomy Picture of the Day
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>Astronomy Picture of the Day</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<br>
+<br>
+      <div class="video-container">
+        <img src="{{url}}" class="img-responsive" id="img2" *ngIf="mimeType=='image'">
+        <iframe [src]="url | safe"  *ngIf="mimeType=='video'" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="ion-text-center">
+   <ion-text color="medium"><h2>{{date}}</h2></ion-text>
+    </div>
+    <div class="ion-text-center">
+      <ion-text color= "danger"><h2>{{title}}</h2></ion-text>
+    </div>
+    <div class="ion-text-justify">
+     <ion-text color="tertiary"><p>{{explanation}}</p></ion-text> 
+    </div>
+    
+</ion-content>

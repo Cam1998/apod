@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="medium">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      Astronomy Picture of the Day
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+
+<ion-list>
+
+  <ion-item>
+    
+    <ion-label>Generar Fecha</ion-label>
+    <ion-datetime placeholder="Seleccionar"
+    display-format="YYYY MMMM DD"
+cancelText="Cancelar"
+doneText="Aceptar"
+[ngModel]="fechaGene.toISOString()"
+[pickerOptions]="customPickerOptions"></ion-datetime>
+  </ion-item>
+
+</ion-list>
+
+      <div class="video-container">
+      <img src="{{url}}" class="img-responsive" id="img2" *ngIf="mimeType=='image'">
+      <iframe [src]="url | safe"  *ngIf="mimeType=='video'" frameborder="0"></iframe>
+  </div>
+
+  <div class="ion-text-center">
+    <ion-text color="secondary"><h2>{{date}}</h2></ion-text>
+  </div>
+  <div class="ion-text-center">
+    <ion-text color="danger"><h2>{{title}}</h2></ion-text>
+  </div>
+  <div class="ion-text-justify">
+    <ion-text color="medium"><p>{{explanation}}</p></ion-text>
+  </div> 
+
+</ion-content>
